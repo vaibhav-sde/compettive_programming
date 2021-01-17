@@ -1,0 +1,9 @@
+<h1>
+          Enter countdown time:
+          <div>
+            <input id="timeCount" onKeyDown={handleEnterTime} />
+          </div>
+        </h1>
+        <button id="button" value='' name="start" onClick={handleEnterTime}>
+          Start
+        </button>
