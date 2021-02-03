@@ -18,7 +18,8 @@ int knapsackMemory(int wt[], int val[], int W, int n) {
         return T[n][W];
     }
     if (wt[n - 1] <= W) {
-        T[n][W] = max(val[n - 1] + knapsackMemory(wt, val, W - wt[n - 1], n - 1), knapsackMemory(wt, val, W, n - 1));
+        T[n][W] = max(val[n - 1] + knapsackMemory(wt, val, W - wt[n - 1], n - 1),
+                      knapsackMemory(wt, val, W            , n - 1));
         return T[n][W];
     }
     else {
@@ -36,7 +37,7 @@ void solve() {
     range(0, W + 1, 1, j)
     T[i][j] = -1;
     cout << knapsackMemory(wt, val, W, n); pnl;
-    cout << "ANS : " << hits << T[n + 1][W + 1];
+    // cout << "ANS : " << hits << T[n + 1][W + 1];
 }
 int main() {
     lli t = 1;

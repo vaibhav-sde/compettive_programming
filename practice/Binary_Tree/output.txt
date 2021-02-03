@@ -1,2 +1,0 @@
-
-Right view of tree is : 8 23 101 88 92 99 100 

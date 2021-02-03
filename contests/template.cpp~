@@ -1,4 +1,3 @@
-// problem link:
 #include<bits/stdc++.h>
 using namespace  std;
 #define range(x,y,z,vnm) for(long long int vnm=x;vnm<y;vnm=vnm+z)
@@ -25,10 +24,7 @@ int main() {
   return  0;
 }
 
-/*
-sample IO
 
-*/
 
 
 

@@ -1,4 +1,4 @@
-// problem link:
+// https://www.codechef.com/LTIME92C/problems/SUMPOS
 #include<bits/stdc++.h>
 using namespace  std;
 #define range(x,y,z,vnm) for(long long int vnm=x;vnm<y;vnm=vnm+z)
@@ -10,6 +10,12 @@ typedef pair<int, int> pii;
 typedef pair<lli, lli> plli;
 void solve() {
   lli n, m, k, a, b, c, p, q;
+  cin >> a >> b >> c;
+  if ((a + b == c) || (b + c == a) || (a + c == b)) {
+    cout << "YES";
+  }
+  else
+    cout << "NO";
 }
 int main() {
 #ifndef ONLINE_JUDGE
@@ -17,7 +23,7 @@ int main() {
   freopen("output.txt", "w", stdout);
 #endif
   lli t = 1;
-  // cin>>t;
+  cin >> t;
   while (t--) {
     solve();
     pnl;
@@ -25,10 +31,7 @@ int main() {
   return  0;
 }
 
-/*
-sample IO
 
-*/
 
 
 
