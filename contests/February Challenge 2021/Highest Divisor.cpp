@@ -10,7 +10,10 @@ typedef pair<int, int> pii;
 typedef pair<lli, lli> plli;
 void solve() {
   lli n, m, k, a, b, c, p, q;
-  cout << "HEllo world";
+  cin >> n;
+  for (lli i = 9; i >= 0; i++) {
+
+  }
 }
 int main() {
 #ifndef ONLINE_JUDGE

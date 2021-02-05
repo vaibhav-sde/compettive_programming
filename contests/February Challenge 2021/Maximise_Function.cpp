@@ -1,4 +1,4 @@
-// problem link :
+// problem link : https://www.codechef.com/FEB21C/problems/MAXFUN
 #include<bits/stdc++.h>
 using namespace  std;
 #define range(x,y,z,vnm) for(long long int vnm=x;vnm<y;vnm=vnm+z)
@@ -10,7 +10,16 @@ typedef pair<int, int> pii;
 typedef pair<lli, lli> plli;
 void solve() {
   lli n, m, k, a, b, c, p, q;
-  cout << "HEllo world";
+  cin >> n;
+  lli arr[n];
+  range(0, n, 1, i)
+  cin >> arr[i];
+  lli maxi = 0;
+  sort(arr, arr + n);
+  a = arr[0];
+  b = arr[1];
+  c = arr[n - 1];
+  cout << (abs(a - b) + abs(b - c) + abs(a - c));
 }
 int main() {
 #ifndef ONLINE_JUDGE
@@ -18,7 +27,7 @@ int main() {
   freopen("output.txt", "w", stdout);
 #endif
   lli t = 1;
-  // cin>>t;
+  cin >> t;
   while (t--) {
     solve();
     pnl;
@@ -29,8 +38,19 @@ int main() {
 /*
 sample IO :
 
+3
+3
+2 7 5
+3
+3 3 3
+5
+2 2 2 2 5
 
 
+
+10
+0
+6
 
 
 
