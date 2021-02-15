@@ -8,22 +8,37 @@ typedef long long int lli;
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef pair<lli, lli> plli;
+lli getDistinct(vector<char> a, vector<char> b) {
+  set <char> xD;
+  for (char ch : a)
+    xD.insert(ch);
+  for (char ch : b)
+    xD.insert(ch);
+  return xD.size();
+}
 void solve() {
   lli n, m, k, a, b, c, p, q;
   cin >> n;
-  unordered_map<char, int>record;
+  unordered_map<string, vector<char>> record;
+  vector <string> rrx;
   while (n--) {
-    string word;
-    cin >> word;
-    if (record.find(word[0]) == record.end()) {
-      record[word[0]] = 1;
+    string x;
+    cin >> x;
+    if (record.find(x.substr(1, x.size() - 1)) == record.end()) {
+      record[x.substr(1, x.size() - 1)].push_back(x[0]);
+      rrx.push_back(x.substr(1, x.size() - 1));
     } else {
-      record[word[0]]++;
+      record[x.substr(1, x.size() - 1)].push_back(x[0]);
     }
   }
-  for (auto p : record) {
-    cout << p.first << " " << p.second << endl;
+  lli T = 0;
+  range(0, rrx.size() - 1, 1, i) {
+    range(i + 1, rrx.size(), 1, j) {
+      lli distance = getDistinct(record[rrx[i]], record[rrx[j]]);
+      T += ((distance - record[rrx[i]].size()) * (distance - record[rrx[j]].size()));
+    }
   }
+  cout << 2 * T;
 }
 int main() {
 #ifndef ONLINE_JUDGE
@@ -50,9 +65,16 @@ good game guys
 4
 hell bell best test
 
+ans:
+2
+0
+2
 
-
-
+1
+4
+dtp ctq rts etp
+ans :
+10
 */
 
 
