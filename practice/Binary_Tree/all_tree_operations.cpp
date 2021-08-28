@@ -81,13 +81,50 @@ void rightView(Node *root, int currentLevel) {
   rightView(root->right, currentLevel + 1);
   rightView(root->left, currentLevel + 1);
 }
+
+map<int,int> record;
+
+void BottomView(Node *node, int hori){
+  if(node == NULL)
+    return;
+  cout<<node->data<<" "<<hori<<"\n";
+  record[hori] = node ->data;
+  BottomView(node->left,hori-1);
+  BottomView(node->right,hori+1);
+
+}
+map<int,int> record2;
+
+void TopView(Node *node, int hori)
+{
+  if(node == NULL)
+    return;
+  if(record2.find(hori) == record2.end())
+  {
+    // cout<<node->data<<" "<<hori<<"\n";
+    record2[hori] = node ->data;
+  }
+  TopView(node->left,hori-1);
+  TopView(node->right,hori+1);
+
+}
+
 void solve(Node *root) {
   // cout << "Inorder TRaversal of tree is : "; Inorder(root);
   // cout << endl << "Preorder TRaversal of tree is : "; Preorder(root);
   // cout << endl << "PostOrder TRaversal of tree is : "; PostOrder(root);
   // cout << endl << "Height of tree is : " << findHeight(root);
   // cout << endl << "Left view of tree is : "; leftView(root, 0);
-  cout << endl << "Right view of tree is : "; rightView(root, 0);
+  // cout << endl << "Right view of tree is : "; rightView(root, 0);
+  // cout<<"***BOTTOM VIEW*** \n";BottomView(root,0);
+  // for(auto gg : record){
+  //   cout<<gg.second<<" ";
+  // }
+  cout<<"***TOP VIEW*** \n";
+  TopView(root,0);
+  for(auto gg : record2){
+    cout<<gg.second<<" ";
+  }
 }
 int main() {
 #ifndef ONLINE_JUDGE

@@ -46,6 +46,11 @@ void findHeight(Node *root, long height) {
   findHeight(root->left, height + 1);
   findHeight(root->right, height + 1);
 }
+void bottomView(Node *root, int horiz_distance){
+  if(!root)
+    return;
+  
+}
 void solve() {
   lli n;
   cin >> n;
